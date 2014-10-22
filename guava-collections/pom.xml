@@ -8,8 +8,10 @@
 		<artifactId>guava-sample</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>guava-functional-programming</artifactId>
-	<name>guava-functional-programming</name>
+	<artifactId>guava-collections</artifactId>
+	<name>guava-collections</name>
+	<url>http://maven.apache.org</url>
+
 	<dependencies>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
