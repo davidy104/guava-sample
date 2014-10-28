@@ -158,5 +158,6 @@
 		<module/>
 		<module>guava-sample-shared</module>
     <module>guava-collections</module>
+    <module>guava-file</module>
   </modules>
 </project>
