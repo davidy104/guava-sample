@@ -3,9 +3,11 @@ package nz.co.dav.guava.sample.utilities;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import org.apache.commons.collections.IteratorUtils;
 import org.junit.Test;
 
 import com.google.common.base.CharMatcher;
@@ -45,8 +47,9 @@ public class SplitterTest {
 		String text = "foo123bar45678baz";
 		String[] expected = new String[] { "foo", "bar", "baz" };
 		Iterable<String> values = Splitter.onPattern(pattern).split(text);
+		List<String> list = IteratorUtils.toList(values.iterator());
 		int index = 0;
-		for (String value : values) {
+		for (String value : list) {
 			assertThat(value, is(expected[index++]));
 		}
 	}
