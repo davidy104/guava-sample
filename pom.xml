@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>nz.co.dav.guava.sample</groupId>
@@ -19,7 +20,7 @@
 		<commons-io.version>2.4</commons-io.version>
 		<commons-lang3.version>3.3.2</commons-lang3.version>
 		<guava.version>18.0</guava.version>
-		<lucene.version>4.10.1</lucene.version>
+		<lucene.version>4.0.0</lucene.version>
 		<mockito.version>1.9.5</mockito.version>
 		<junit.version>4.11</junit.version>
 	</properties>
@@ -43,6 +44,11 @@
 			<dependency>
 				<groupId>org.apache.lucene</groupId>
 				<artifactId>lucene-core</artifactId>
+				<version>${lucene.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.lucene</groupId>
+				<artifactId>lucene-analyzers-common</artifactId>
 				<version>${lucene.version}</version>
 			</dependency>
 			<dependency>
@@ -155,9 +161,10 @@
 	<modules>
 		<module>guava-basic-utilities</module>
 		<module>guava-functional-programming</module>
-		<module/>
+		<module />
 		<module>guava-sample-shared</module>
-    <module>guava-collections</module>
-    <module>guava-file</module>
-  </modules>
+		<module>guava-collections</module>
+		<module>guava-file</module>
+		<module>guava-thread</module>
+	</modules>
 </project>
