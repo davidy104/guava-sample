@@ -58,6 +58,10 @@ public class SplitterTest {
 	public void testSplit() {
 		String delimiter = "&";
 		String text = "foo&bar&baz";
+		
+		String s = text.substring(0, text.indexOf("&"));
+		System.out.println("s:"+s);
+		
 		String[] expected = new String[] { "foo", "bar", "baz" };
 		Iterable<String> values = Splitter.on(delimiter).split(text);
 		int index = 0;

@@ -12,6 +12,7 @@ import nz.co.dav.guava.sample.model.Book;
 import org.junit.Test;
 
 import com.google.common.base.Function;
+import com.google.common.base.Predicate;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
@@ -21,6 +22,28 @@ public class MapsTest {
 	private Book book2 = new Book.Builder().isbn("ISBN456").title("book2").build();
 	private Book book3 = new Book.Builder().isbn("ISBN789").title("book3").build();
 	private List<Book> books = Lists.newArrayList(book, book2, book3);
+
+	@Test
+	public void filterValueTest() {
+		final Set<String> selectedIsbns = Sets.newHashSet("ISBN123");
+		final Map<String, Book> bookMap = Maps.newHashMap();
+		bookMap.put("ISBN123", book);
+		bookMap.put("ISBN456", book2);
+		bookMap.put("ISBN789", book3);
+
+		Map<String, Book> filteredMap = Maps.filterKeys(bookMap, new Predicate<String>() {
+			@Override
+			public boolean apply(String input) {
+				return input.equals("ISBN789") || selectedIsbns.contains(input);
+			}
+		});
+
+		for (Map.Entry<String, Book> entry : filteredMap.entrySet()) {
+			System.out.println("Key : " + entry.getKey() + " Value : "
+					+ entry.getValue());
+		}
+
+	}
 
 	@Test
 	public void uniqueIndexTest() {
@@ -68,6 +91,7 @@ public class MapsTest {
 		assertThat(map.get("ISBN123"), is("book1"));
 		assertThat(map.get("ISBN456"), is("book2"));
 		assertThat(map.get("ISBN789"), is("book3"));
+
 	}
 
 	@Test
