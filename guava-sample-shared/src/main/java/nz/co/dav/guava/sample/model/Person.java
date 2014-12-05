@@ -68,6 +68,11 @@ public class Person implements Comparable<Person> {
 	}
 
 	@Override
+	public String toString() {
+		return "Person [firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", sex=" + sex + "]";
+	}
+
+	@Override
 	public int compareTo(Person o) {
 		return ComparisonChain.start().
 				compare(this.firstName, o.getFirstName()).

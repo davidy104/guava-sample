@@ -32,7 +32,6 @@ public class AsyncEventBusTest extends EventBusTestBase {
      */
     @Test
     public void testAsyncEventSubscriber() throws Exception {
-
         long start = System.currentTimeMillis();
         for (int i = 0; i < numberLongEvents; i++) {
             asyncEventBus.post(buyEventBuilder().build());

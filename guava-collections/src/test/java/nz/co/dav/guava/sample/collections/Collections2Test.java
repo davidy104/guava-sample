@@ -45,6 +45,10 @@ public class Collections2Test {
 			}
 		});
 		System.out.println("size: "+filtered.size());
+		
+		for(Person person : filtered){
+			System.out.println("person: "+person);
+		}
 
 //		assertThat(filtered.isEmpty(), is(true));
 	}
