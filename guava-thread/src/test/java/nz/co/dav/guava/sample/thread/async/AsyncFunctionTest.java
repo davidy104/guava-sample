@@ -44,7 +44,6 @@ public class AsyncFunctionTest extends SearchingTestBase {
 
 	@Test
 	public void testAsyncTransform() throws Exception {
-
 		AsyncFunction<List<String>, List<Person>> queryFunction = new AsyncFunction<List<String>, List<Person>>() {
 			@Override
 			public ListenableFuture<List<Person>> apply(final List<String> ids) {
@@ -64,7 +63,6 @@ public class AsyncFunctionTest extends SearchingTestBase {
 
 	@Test
 	public void testTransformSearch() throws Exception {
-
 		Function<List<String>, List<Person>> transformSearchResults = new Function<List<String>, List<Person>>() {
 			@Override
 			public List<Person> apply(List<String> ids) {

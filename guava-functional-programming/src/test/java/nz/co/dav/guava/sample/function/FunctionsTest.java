@@ -64,6 +64,11 @@ public class FunctionsTest {
 		};
 		assertThat(function.apply(date), is(expected));
 	}
+	
+	@Test
+	public void stringToDate()throws Exception {
+		DateFormatFunction function = new DateFormatFunction(format);
+	}
 
 	@Test
 	public void testTransformList() throws Exception {

@@ -52,6 +52,5 @@ public class CacheBuilderSpecTest {
         tradeAccountCache.get("112");
         assertThat(removalListener.getRemovalCause(), is(RemovalCause.EXPIRED));
         assertThat(removalListener.getRemovedValue(), is(tradeAccount));
-
     }
 }

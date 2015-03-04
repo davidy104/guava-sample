@@ -10,9 +10,14 @@ public class TestPublisher {
 		super();
 		eventBus = TestEventBusFactory.getEventBus();
 		TestSubscriberFactory.getTestSubscriber();
+		TestSubscriber1Factory.getTestSubscriber();
 	}
 
 	public void execute(final String message) {
 		eventBus.post(new TestEvent(message));
+	}
+
+	public void execute1(final String message) {
+		eventBus.post(new TestEvent1(message));
 	}
 }
